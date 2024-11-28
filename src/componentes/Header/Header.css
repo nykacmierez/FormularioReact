@@ -1,0 +1,19 @@
+.header{
+    position: relative;
+    background-color: #6278F7;
+    text-align: center;
+    
+}
+
+.header img {
+   max-width: 100%;
+    
+}
+
+.img2 {
+    position: absolute;
+    width: 725px;
+    height: 430px;
+    right: 2px;
+    bottom: 2px;
+}
