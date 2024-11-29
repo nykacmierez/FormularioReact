@@ -5,7 +5,7 @@ import ListaOpciones from "../ListaOpciones/ListaOpciones";
 import Boton from "../Boton/Boton";
 
 
-const Formulario = () => {
+const Formulario = (props) => {
 
     const [nombre, setNombre] = useState("");
     const [puesto, setPuesto] = useState("");
@@ -58,6 +58,7 @@ const Formulario = () => {
                 <ListaOpciones 
                     valor={ equipo }
                     setEquipo={ setEquipo }
+                    equipos={ props.equipos }
                 />
 
                 <Boton>
