@@ -7,14 +7,21 @@ import Boton from "../Boton/Boton";
 
 const Formulario = () => {
 
-    const [nombre, setNombre] = useState();
-    const [puesto, setPuesto] = useState();
-    const [foto, setFoto] = useState();
-
+    const [nombre, setNombre] = useState("");
+    const [puesto, setPuesto] = useState("");
+    const [foto, setFoto] = useState("");
+    const [equipo, setEquipo] = useState("");
 
     const manejarEnvio = (e) => {
-        
         e.preventDefault();
+        
+        const datosEnviados = { //toma el valor correspondiente de cada input y manda
+            nombre,
+            puesto,
+            foto,
+            equipo
+        }
+        console.log(datosEnviados)
     }
 
 
@@ -48,7 +55,10 @@ const Formulario = () => {
                 setValor={ setFoto }
                 />
 
-                <ListaOpciones />
+                <ListaOpciones 
+                    valor={ equipo }
+                    setEquipo={ setEquipo }
+                />
 
                 <Boton>
                     Crear

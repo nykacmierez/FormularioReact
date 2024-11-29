@@ -4,11 +4,9 @@ import "./CampoTexto.css"
 
 const CampoTexto = (props) => {
     
-    const [valor, setValor] = useState(""); 
     const placeholderModificado = `${props.placeholder}...`
     
     const manejarCambio = (e) => {
-        console.log("cambio", e.target.value)
         props.setValor(e.target.value) //El estado setValor viene del formulario como prop.
     }
 
