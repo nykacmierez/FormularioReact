@@ -2,7 +2,6 @@ import {useState} from "react";
 import "./miOrg.css";
 
 
-
 const MiOrg = (props) => { //como parametro debe tener las props para poder ejecutar la funcion 
 
     const [mostrar, setMostrar] = useState(true);
