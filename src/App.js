@@ -3,6 +3,7 @@ import Formulario from './componentes/Formulario/Formulario';
 import Header from './componentes/Header/header';
 import MiOrg from './componentes/MiOrg/MiOrg';
 import Equipo from './componentes/Equipo/Equipo';
+import Footer from './componentes/Footer/Footer';
 
 import './App.css';
 
@@ -11,10 +12,22 @@ import './App.css';
 function App() {
   
   const [mostrarForm, setMostrarForm] = useState(false);
+  const [colaboradores, setColaboradores] = useState([{
+      equipo: "Programador",
+      foto: "https://github.com/nykacmierez.png",
+      nombre: "Lucas Mierez",
+      puesto: "Developer"
+    }]);
   
   const cambiarMostrar = () => {
     setMostrarForm(!mostrarForm)
   }
+
+  const registrarColaborador = (colaborador) => {
+    console.log("Nuevo Colaborador", colaborador)
+    setColaboradores( [...colaboradores, colaborador] )
+  }
+
 
   //un arreglo de obj para cada equipo  con sus caracteristicas
   const equipos = [
@@ -63,14 +76,24 @@ function App() {
       <Header />
 
      {
-        mostrarForm && <Formulario equipos={ equipos.map((equipo) => equipo.titulo )}/> 
+        mostrarForm && <Formulario 
+          equipos={ equipos.map((equipo) => equipo.titulo )}
+          registrarColaborador={ registrarColaborador } //envia como props la funcion
+        /> 
      } 
 
       <MiOrg cambiarMostrar={ cambiarMostrar }/> {/*se le asigna a MiOrg la funcion como props*/}
 
       { 
-        equipos.map( (equipo) => <Equipo datos={ equipo } key={ equipo.titulo }/> )
+        equipos.map( (equipo) => <Equipo 
+            datos={ equipo } 
+            key={ equipo.titulo }
+            colaboradores={ colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo) }
+          /> 
+        )
       }
+
+      <Footer />
 
     </>
   );

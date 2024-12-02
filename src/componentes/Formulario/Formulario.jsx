@@ -12,6 +12,9 @@ const Formulario = (props) => {
     const [foto, setFoto] = useState("");
     const [equipo, setEquipo] = useState("");
 
+
+    const {registrarColaborador} = props;
+
     const manejarEnvio = (e) => {
         e.preventDefault();
         
@@ -21,7 +24,7 @@ const Formulario = (props) => {
             foto,
             equipo
         }
-        console.log(datosEnviados)
+        props.registrarColaborador(datosEnviados) //la props viene desde el main y llama a la funcion   
     }
 
 
