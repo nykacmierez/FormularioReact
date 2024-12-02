@@ -1,0 +1,159 @@
+/* Estilo general */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  /* Para dispositivos móviles (máximo 480px) */
+  @media (max-width: 480px) {
+    .formulario {
+      flex-direction: column;
+      margin: 20px;
+    }
+  
+    .formulario form {
+      padding: 8px 20px;
+    }
+
+    .img2 {
+      width: 300px;
+      height: auto; 
+      position: relative; 
+      margin: 0 auto; 
+      right: 0; 
+      bottom: 0; 
+  }
+  
+    .boton {
+      padding: 1rem;
+      font-size: 1.5rem; 
+      border-radius: 8px; 
+    }
+  
+    .campo input {
+      padding: 20px;
+      font-size: 14px;
+    }
+  
+    .equipo {
+      padding: 16px;
+      font-size: 24px;
+    }
+  
+    .colaborador {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+  
+    .footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer img {
+      margin: 10px 0;
+    }
+  
+    .redes img {
+      padding: 5px;
+    }
+  }
+  
+  /* Para tablets (481px a 768px) */
+  @media (min-width: 481px) and (max-width: 768px) {
+    .formulario {
+      flex-direction: column;
+      margin: 40px;
+    }
+  
+    .formulario form {
+      padding: 8px 50px;
+    }
+  
+    .boton {
+      padding: 20px 28px;
+      font-size: 16px;
+    }
+  
+    .campo input {
+      padding: 25px;
+      font-size: 16px;
+    }
+  
+    .equipo {
+      padding: 24px;
+      font-size: 28px;
+    }
+  
+    .colaboradores {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .colaborador {
+      width: 45%;
+      margin-bottom: 16px;
+    }
+  
+    .footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer img {
+      margin: 10px 0;
+    }
+  
+    .redes img {
+      padding: 8px;
+    }
+  }
+  
+  /* Para ordenadores (a partir de 769px) */
+  @media (min-width: 769px) {
+    .formulario {
+      flex-direction: row;
+      margin: 80px 50px;
+    }
+  
+    .formulario form {
+      padding: 8px 100px;
+    }
+  
+    .boton {
+      padding: 24px 32px;
+      font-size: 18px;
+    }
+  
+    .campo input {
+      padding: 30px;
+      font-size: 16px;
+    }
+  
+    .equipo {
+      padding: 32px;
+      font-size: 32px;
+    }
+  
+    .colaboradores {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+    .colaborador {
+      width: 280px;
+      margin-bottom: 24px;
+    }
+  
+    .footer {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .redes img {
+      padding: 15px;
+    }
+  }
+  

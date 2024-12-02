@@ -1,14 +1,16 @@
-import "./equipo.css";
 import Colaborador from "../Colaborador/Colaborador";
+import hexToRgba from 'hex-to-rgba';
+
+import "./equipo.css";
 
 
 const Equipo = (props) => {
 
-    const { colorPrimario, colorSecundario, titulo} = props.datos; //desestructura los valores y crea var con esos valores desde props.datos
+    const { colorPrimario, colorSecundario, titulo, id} = props.datos; //desestructura los valores y crea var con esos valores desde props.datos
     
     const {colaboradores, eliminarColaborador, actualizarColor} = props;
    
-    const estiloCard = { backgroundColor: colorSecundario }; //se puede llamar a la var con el valor de la desestructuracion anterior
+    const estiloCard = { backgroundColor: hexToRgba(colorPrimario, 0.6)};
 
     const estiloTitulo = { borderColor: colorPrimario };
 
@@ -19,9 +21,9 @@ const Equipo = (props) => {
                 <input 
                     type="color"
                     className="input-color"
-                    value={ colorSecundario }
+                    value={ colorPrimario }
                     onChange={(e) => {
-                        actualizarColor(e.target.value, titulo)
+                        actualizarColor(e.target.value, id)
                     }}
                 />
                 <h3 style={estiloTitulo}> { titulo } </h3>
