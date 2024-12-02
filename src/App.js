@@ -13,44 +13,33 @@ function App() {
   
   const [mostrarForm, setMostrarForm] = useState(false);
   const [colaboradores, setColaboradores] = useState([{
-      equipo: "Programador",
-      foto: "https://github.com/nykacmierez.png",
-      nombre: "Lucas Mierez",
-      puesto: "Developer"
-    }]);
-  
-  const cambiarMostrar = () => {
-    setMostrarForm(!mostrarForm)
-  }
-
-  const registrarColaborador = (colaborador) => {
-    console.log("Nuevo Colaborador", colaborador)
-    setColaboradores( [...colaboradores, colaborador] )
-  }
-
-
-  //un arreglo de obj para cada equipo  con sus caracteristicas
-  const equipos = [
-
+     nombre: "Lucas Mierez",
+     puesto: "developer",
+     foto: "https://github.com/nykacmierez.png",
+     equipo: "Programacion"
+  }]);
+ 
+  const [equipos, actualizarEquipos] = useState([
+    //un arreglo de obj para cada equipo con sus caracteristicas
     {
       titulo: "Programacion",
       colorPrimario: "#57C278",
-      colorSecundario: "#D9F7E9",
+      colorSecundario: "#D9F7E9"
     },
     {
       titulo: "Front End",
       colorPrimario: "#82CFFA",
-      colorSecundario: "#E8F8FF"
+      colorSecundario: "#E8F8FF",
     },
     {
       titulo: "Data Science",
       colorPrimario: "#A6D157",
-      colorSecundario: "#F0F8E2"
+      colorSecundario: "#F0F8E2",
     },
     {
       titulo:  "Devops",
       colorPrimario: "#E06B69",
-      colorSecundario: "#FDE7E8"
+      colorSecundario: "#FDE7E8",
     },
     {
       titulo: "UX y Diseño",
@@ -65,10 +54,28 @@ function App() {
     {
       titulo: "Innovacion y Gestion",
       colorPrimario: "#FF8A29",
-      colorSecundario: "#FFEEDF"
-    }
-  ];
+      colorSecundario: "#FFEEDF",
+    },
+  ]);
 
+  const cambiarMostrar = () => {
+    setMostrarForm(!mostrarForm)
+  }
+
+  const registrarColaborador = (colaborador) => {
+    setColaboradores( [...colaboradores, colaborador] )
+  }
+
+  const eliminarColaborador = () => {
+    console.log("Eliminar colaborador")
+  }
+
+  const actualizarColor = (color, titulo) => {
+    console.log("Actualizar:", color, titulo)
+  }
+
+
+  
 
   return (
     
@@ -89,6 +96,8 @@ function App() {
             datos={ equipo } 
             key={ equipo.titulo }
             colaboradores={ colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo) }
+            eliminarColaborador={ eliminarColaborador }
+            actualizarColor={ actualizarColor }
           /> 
         )
       }
